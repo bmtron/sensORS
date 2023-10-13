@@ -37,3 +37,14 @@ pub fn sys_test() {
             println!("[{}] {} {:?}", pid, process.name(), process.disk_usage());
         }*/
 }
+
+pub fn get_disk_usage() {
+    let mut sys = System::new_all();
+
+    sys.refresh_all();
+
+    println!("=> disks:");
+    for disk in sys.disks() {
+        println!("{:?}", disk);
+    }
+}
